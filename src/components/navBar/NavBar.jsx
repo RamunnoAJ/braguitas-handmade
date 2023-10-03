@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// eslint-disable-next-line import/no-unresolved, import/no-extraneous-dependencies
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import {
   faMagnifyingGlass,
