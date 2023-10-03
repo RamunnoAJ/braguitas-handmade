@@ -1,5 +1,5 @@
 import { Montserrat } from 'next/font/google';
-import NavBar from '../components/navBar/NavBar';
+import NavBar from '../components/NavBar';
 import './globals.css';
 
 const montserrat = Montserrat({ subsets: ['latin'] });
