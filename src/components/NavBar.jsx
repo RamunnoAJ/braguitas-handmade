@@ -75,7 +75,7 @@ const NavBar = () => {
         <div
           onClick={handleClick}
           className=' flex md:hidden items-center  h-16'>
-          <ul className='w-full h-screen absolute top-0 left-0    bg-white  '>
+          <ul className='w-full h-screen absolute z-30 top-0 left-0    bg-white  '>
             <div className='grid md:hidden   h-20 w-full bg-[#E8D0EF] items-center px-10'>
               <FontAwesomeIcon icon={faCircleXmark} />
             </div>
