@@ -15,7 +15,7 @@ const NavBar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   return (
-    <main className='bg-[#E8D0EF]  w-full  items-center h-16 md:h-20 md:px-12 px-6  fixed'>
+    <main className='bg-[#E8D0EF] w-full items-center h-16 md:h-20 md:px-12 px-6'>
       <div className='hidden md:grid  md:grid-cols-5  h-20  '>
         <div className='flex justify-center items-center    col-span-4 '>
           <Link
@@ -32,7 +32,7 @@ const NavBar = () => {
             LOGO
           </div>
           <Link
-            href='/'
+            href='/contact'
             className='flex justify-center items-center font-bold text-sm hover:bg-white   w-full rounded-full h-10 ml-20 '>
             CONTACTO
           </Link>
