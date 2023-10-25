@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Button from './buttons/Button';
 
 const ProductCard = ({ title, image, price, stock, isNew }) => {
   const [isMobile, setIsMobile] = useState('Añadir al carrito');
@@ -29,7 +30,7 @@ const ProductCard = ({ title, image, price, stock, isNew }) => {
       <div className='flex flex-col gap-2 p-2'>
         <h2 className='text-sm font-bold'>{title}</h2>
         <p className='text-sm font-bold mb-2'>{price}</p>
-        <button>{isMobile}</button>
+        <Button cx='bg-[#530586] text-white w-full'>{isMobile}</Button>
       </div>
     </article>
   );
