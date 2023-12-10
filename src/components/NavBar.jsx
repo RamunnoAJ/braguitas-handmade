@@ -24,7 +24,7 @@ const NavBar = () => {
             INICIO
           </Link>
           <Link
-            href='/'
+            href='/store'
             className='flex justify-center items-center font-bold text-sm hover:bg-white   w-full rounded-full h-10 mr-20 '>
             TIENDA
           </Link>
@@ -86,10 +86,10 @@ const NavBar = () => {
               <Link href='/'>INICIO</Link>
             </li>
             <li className='px-10 py-5 font-bold text-sm'>
-              <Link href='/'>TIENDA</Link>
+              <Link href='/store'>TIENDA</Link>
             </li>
             <li className='px-10 py-5 font-bold text-sm'>
-              <Link href='/'>CONTACTO</Link>
+              <Link href='/contact'>CONTACTO</Link>
             </li>
           </ul>
         </div>
