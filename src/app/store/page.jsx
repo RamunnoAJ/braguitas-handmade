@@ -8,6 +8,7 @@ import Button from '../../components/buttons/Button';
 const StorePage = () => {
   const [products, setProduct] = useState([]);
   const [search, setSearch] = useState('');
+  const [category, setCategory] = useState(null);
 
   useEffect(() => {
     const ShowData = async () => {
@@ -22,42 +23,51 @@ const StorePage = () => {
   const searcher = e => {
     e.preventDefault();
     setSearch(e.target.inputSearch.value);
+    setCategory(null);
   };
-
-  const [category, setCategory] = useState(null);
 
   // eslint-disable-next-line no-shadow
   const handleCategory = category => {
     setCategory(category);
   };
   const filteredProducts = products.filter(product => {
-    const categoryName = product.first_name
+    const name = product.first_name
       .toLowerCase()
       .includes(search.toLowerCase());
 
-    return (
-      categoryName &&
-      // Cambié la lógica para permitir que los productos se muestren si category es null
-      (!category ||
-        category === 1 ||
-        (category === 1 && product.first_name.toLowerCase() === 'emma') ||
-        (category === 2 && product.first_name.toLowerCase() === 'george') ||
-        (category === 3 && product.first_name.toLowerCase().includes('c')) ||
-        (category === 4 && product.first_name.toLowerCase() === 'janet'))
-    );
-  });
+    if (category === 1) {
+      return search.trim() === ''
+        ? product.first_name.toLowerCase() === 'emma'
+        : name;
+    }
 
-  const result =
-    search && filteredProducts.length === 0
-      ? 'No se encontraron resultados'
-      : filteredProducts;
+    if (category === 2) {
+      return search.trim() === ''
+        ? product.first_name.toLowerCase() === 'george'
+        : name;
+    }
+
+    if (category === 3) {
+      return search.trim() === ''
+        ? product.first_name.toLowerCase() === 'janet'
+        : name;
+    }
+
+    if (category === 4) {
+      return search.trim() === ''
+        ? product.first_name.toLowerCase() === 'eve'
+        : name;
+    }
+
+    return search.trim() !== '' ? name : name;
+  });
 
   return (
     <div className='grid justify-center items-center h-fit md:my-28 my-10 '>
       <h1 className='w-full h-10 grid justify-center items-center font-bold text-2xl '>
         NUESTROS PRODUCTOS
       </h1>
-      <SearchBar defaultvalue='' onSubmit={searcher} />
+      <SearchBar defaultValue='' onSubmit={searcher} />
       <div className='flex justify-center gap-2 mb-12'>
         <Button
           handleClick={() => handleCategory(1)}
@@ -87,21 +97,8 @@ const StorePage = () => {
         <h3 className='w-full grid justify-center items-center font-bold text-lg '>
           MOSTRANDO LOS RESULTADOS DE TU BÚSQUEDA
         </h3>
-        {search ? (
-          <div className='grid md:grid-cols-4 xl:mx-40 sm:mx-20 grid-cols-2 gap-4 p-2 mt-10'>
-            {Array.isArray(result) ? (
-              result.map(product => (
-                <ProductCard
-                  key={product.id}
-                  image={product.avatar}
-                  title={product.first_name}
-                  price={`$ ${product.id}`}
-                />
-              ))
-            ) : (
-              <p>{result}</p>
-            )}
-          </div>
+        {filteredProducts.length === 0 ? (
+          <div> No se encontraron resultados</div>
         ) : (
           <div className='grid md:grid-cols-4 xl:mx-40 sm:mx-20 grid-cols-2 gap-4 p-2 mt-10 '>
             {filteredProducts.map(product => (
