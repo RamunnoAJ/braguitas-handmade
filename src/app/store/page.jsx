@@ -69,7 +69,7 @@ const StorePage = () => {
       </h1>
       <SearchBar defaultValue='' onSubmit={searcher} />
       <div className='flex  items-center justify-center mx-4'>
-        <div className='md:flex m-2'>
+        <div className='flex md:flex-row flex-col justify-center items-center m-2 '>
           <Button
             handleClick={() => handleCategory(1)}
             cx='bg-[#E8D0EF] hover:bg-[#530586] text-white text-xs md:text-sm w-full md:w-[231px] h-[40px] flex items-center justify-center m-2'>
@@ -82,7 +82,7 @@ const StorePage = () => {
             CATEGORÍA 2
           </Button>
         </div>
-        <div className='md:flex m-2'>
+        <div className='flex md:flex-row flex-col justify-center items-center m-2'>
           <Button
             handleClick={() => handleCategory(3)}
             cx='bg-[#E8D0EF] hover:bg-[#530586] text-white text-xs md:text-sm w-full md:w-[231px] h-[40px] flex items-center justify-center m-2'>
