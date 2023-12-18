@@ -63,37 +63,40 @@ const StorePage = () => {
   });
 
   return (
-    <div className='grid justify-center items-center h-fit md:my-28 my-10 '>
-      <h1 className='w-full h-10 grid justify-center items-center font-bold text-2xl '>
+    <main className='grid justify-center items-center h-full md:my-28 my-10  '>
+      <h1 className=' grid justify-center items-center w-full h-10 font-bold text-2xl '>
         NUESTROS PRODUCTOS
       </h1>
       <SearchBar defaultValue='' onSubmit={searcher} />
-      <div className='flex justify-center gap-2 mb-12'>
-        <Button
-          handleClick={() => handleCategory(1)}
-          cx='bg-[#E8D0EF] hover:bg-[#530586] text-white w-[231px] h-[40px] flex items-center justify-center'>
-          CATEGORÍA 1
-        </Button>
+      <div className='flex  items-center justify-center mx-4'>
+        <div className='md:flex m-2'>
+          <Button
+            handleClick={() => handleCategory(1)}
+            cx='bg-[#E8D0EF] hover:bg-[#530586] text-white text-xs md:text-sm w-full md:w-[231px] h-[40px] flex items-center justify-center m-2'>
+            CATEGORÍA 1
+          </Button>
 
-        <Button
-          handleClick={() => handleCategory(2)}
-          cx='bg-[#E8D0EF] hover:bg-[#530586] text-white w-[231px] h-[40px] flex items-center justify-center'>
-          CATEGORÍA 2
-        </Button>
-
-        <Button
-          handleClick={() => handleCategory(3)}
-          cx='bg-[#E8D0EF] hover:bg-[#530586] text-white w-[231px] h-[40px] flex items-center justify-center'>
-          CATEGORÍA 3
-        </Button>
-        <Button
-          handleClick={() => handleCategory(4)}
-          cx='bg-[#E8D0EF] hover:bg-[#530586] text-white w-[231px] h-[40px] flex items-center justify-center'>
-          CATEGORÍA 4
-        </Button>
+          <Button
+            handleClick={() => handleCategory(2)}
+            cx='bg-[#E8D0EF] hover:bg-[#530586] text-white text-xs md:text-sm w-full md:w-[231px] h-[40px] flex items-center justify-center m-2'>
+            CATEGORÍA 2
+          </Button>
+        </div>
+        <div className='md:flex m-2'>
+          <Button
+            handleClick={() => handleCategory(3)}
+            cx='bg-[#E8D0EF] hover:bg-[#530586] text-white text-xs md:text-sm w-full md:w-[231px] h-[40px] flex items-center justify-center m-2'>
+            CATEGORÍA 3
+          </Button>
+          <Button
+            handleClick={() => handleCategory(4)}
+            cx='bg-[#E8D0EF] hover:bg-[#530586] text-white text-xs md:text-sm w-full md:w-[231px] h-[40px] flex items-center justify-center m-2'>
+            CATEGORÍA 4
+          </Button>
+        </div>
       </div>
 
-      <div className=''>
+      <div className='flex flex-col items-center justify-center mx-4'>
         <h3 className='w-full grid justify-center items-center font-bold text-lg '>
           MOSTRANDO LOS RESULTADOS DE TU BÚSQUEDA
         </h3>
@@ -112,7 +115,7 @@ const StorePage = () => {
           </div>
         )}
       </div>
-    </div>
+    </main>
   );
 };
 

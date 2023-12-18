@@ -13,7 +13,7 @@ const SearchBar = ({ defaultValue, onSubmit }) => {
           </div>
           <form onSubmit={onSubmit}>
             <input
-              className=' h-0.5 m-3 w-[803px] text-left py-4 pl-4 rounded border-none focus:outline-none'
+              className=' h-0.5 m-3 md:w-[803px] w-[265px] text-left py-4 pl-4 rounded border-none focus:outline-none'
               type='text'
               name='inputSearch'
               placeholder='Que estas buscando?'
